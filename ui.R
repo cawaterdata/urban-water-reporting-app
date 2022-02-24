@@ -77,7 +77,9 @@ shinyUI(
                                         "Delta in reported acre feet",
                                         "Percent delta in reported acre feet"),
                             selected = "Acre feet water reported")
-                          )),
+                          ),
+                        mainPanel())
+                      ),
              tabPanel("Definitions",
                       sidebarPanel(
                         checkboxGroupInput("definitions_report_list",
@@ -103,6 +105,7 @@ shinyUI(
                         selectInput("definition_term_dropdown",
                                     "Select the definition term",
                                     choices = c(""),
-                                    selected = c(""))
+                                    selected = c(""))),
+                      mainPanel()),
              tabPanel("Documentation"))
 )
