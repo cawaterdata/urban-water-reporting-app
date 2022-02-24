@@ -1,7 +1,7 @@
-Report Name,State Agency,Legislation,Entities Required,Number of Entities,Report Due Date,Report Frequency,Report Aggregation,Requirement Status
-Urban Water Management Plan,DWR,"WC §10608, WC §10610-10656, AB 1668, SB 606",Urban water supplier,395,Jul 1,every 5 years,"Annually, 5-Year",Current
+report,agency,legislation,required,number,due,frequency,aggregation,status
+Urban Water Management Plan,DWR,"WC §10608, WC §10610-10656, AB 1668, SB 606",Urban water supplier,395,1-Jul,every 5 years,"Annually, 5-Year",Current
 Monthly Urban Water Conservation Report,SWRCB,CR 23 § 991,Urban water supplier not including suppliers functioning only as wholesalers,413,every month,Monthly,Montly,Current
 Electronic Annual Report,SWRCB,"WC §10609.61, CHSC 116530",Every public water system,3803,Feb-Mar,Annually,Monthly,Current
-Annual Water Supply and Demand Assessment,DWR,WC §10632-10632.1,Urban water supplier,395,Jul 1,Annually,"Monthly, Annually",Future
-Water Loss Report,DWR,"WC §10608.34, AB 1414, SB 606, SB 555, CR 23 § 638",Urban retail/wholesale water supplier,318,Jan 1,Annually,Annually,Current
-Water Use Objective,DWR,"WC §10609.2, WC §10609.20-28, AB 1668, SB 606",Urban retail water supplier,318,Jan 1,Annually,Annually,Future
+Annual Water Supply and Demand Assessment,DWR,WC §10632-10632.1,Urban water supplier,395,1-Jul,Annually,"Monthly, Annually",Future
+Water Loss Report,DWR,"WC §10608.34, AB 1414, SB 606, SB 555, CR 23 § 638",Urban retail/wholesale water supplier,318,1-Jan,Annually,Annually,Current
+Water Use Objective,DWR,"WC §10609.2, WC §10609.20-28, AB 1668, SB 606",Urban retail water supplier,318,1-Jan,Annually,Annually,Future
