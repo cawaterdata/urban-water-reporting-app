@@ -11,6 +11,8 @@ library(formattable)
 # Overview table ----------------------------------------------------------
 
 overview_dat <- read_csv("data/overview_table.csv")
+
+# TODO update data after we finish quantitative analysis 
 delta_metrics_data <- read_rds("data/urban_water_reporting_data.rds") 
 volume_metrics_data <- read_rds("data/supply_and_demand_volume_af.rds")
 
