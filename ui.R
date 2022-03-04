@@ -17,7 +17,7 @@ shinyUI(
                           )),
                           mainPanel(DT::dataTableOutput("overview_table"))
                         )
-                      )
+                      ),
              # tabPanel("Data reported",
              #          sidebarLayout(
              #            sidebarPanel(
@@ -49,37 +49,44 @@ shinyUI(
              #              mainPanel(DT:datatable())
              #            )
              #          ),
-             # tabPanel("Data comparisons",
-             #          sidebarLayout(
-             #            sidebarPanel(
-             #              checkboxGroupInput("data_compare_report_list",
-             #                                 label = "Urban Water Reports",
-             #                                 choices = c("Annual Supply and Demand Assessment",
-             #                                             "Electronic Annual Report",
-             #                                             "Monthly Urban Water Conservation Report",
-             #                                             "Urban Water Management Plan",
-             #                                             "Water Loss Audit",
-             #                                             "Water Use Objective"),
-             #                                 selected = c("Electronic Annual Report",
-             #                                              "Urban Water Management Plan")
-             #              ),
-             #              selectInput("data_compare_type_dropdown",
-             #                          label = "Water data type",
-             #                          choices = c("All",
-             #                                      "Water Use",
-             #                                      "Water Supply",
-             #                                      "Other"),
-             #                          selected = "All"
-             #              ),
-             #              selectInput("data_compare_metric_dropdown",
-             #                label = "Select comparison metric",
-             #                choices = c("Acre feet water reported",
-             #                            "Delta in reported acre feet",
-             #                            "Percent delta in reported acre feet"),
-             #                selected = "Acre feet water reported")
-             #              ),
-             #            mainPanel())
-             #          ),
+             tabPanel("Data comparisons",
+                      sidebarLayout(
+                        sidebarPanel(
+                          selectInput("agency_dropdown",
+                                      label = "Agency",
+                                      choices = c("City of Napa",
+                                                  "Santa Fe Irrigation District"),
+                                      selected = "City of Napa"
+                          ),
+                          checkboxGroupInput("data_compare_report_list",
+                                             label = "Urban Water Reports",
+                                             choices = c("Annual Supply and Demand Assessment",
+                                                         "Electronic Annual Report",
+                                                         "Monthly Urban Water Conservation Report",
+                                                         "Urban Water Management Plan",
+                                                         "Water Loss Audit",
+                                                         "Water Use Objective"),
+                                             selected = c("Electronic Annual Report",
+                                                          "Monthly Urban Water Conservation Report",
+                                                          "Urban Water Management Plan",
+                                                          "Water Loss Audit")
+                          ),
+                          selectInput("data_compare_type_dropdown",
+                                      label = "Water data type",
+                                      choices = c("Total Water Supply",
+                                                  "Total Water Demand",
+                                                  "Other"),
+                                      selected = "Total Water Supply"
+                          ),
+                          switchInput("delta_or_percent_delta_switch",
+                                      label = "Percent Delta"
+                          )),
+                        mainPanel(plotOutput("metric_comparison_plot"), 
+                                  br(), 
+                                  hr(),
+                                  br(),
+                                  formattable::formattableOutput("metric_comparison_matrix"))
+                      ))
              # tabPanel("Definitions",
              #          sidebarPanel(
              #            checkboxGroupInput("definitions_report_list",
