@@ -1,0 +1,169 @@
+Water type,Definition group ,Term,UWMP,CR,EAR,WLR,WUO,AWSDA
+Water supply,Groundwater supplied,Groundwater,"Groundwater - Groundwater reporting requirements for the 2020 UWMP apply to any
+groundwater that a Supplier pumps from any groundwater source.",,,,,
+Water supply,Imported/purchased water suppplied ,Water supply water imported,"Purchased or imported water - Suppliers may import or purchase water from other Suppliers or other
+entities. Suppliers will make their own determination as to whether a
+supply is purchased, imported, transferred, or exchanged. Suppliers may possess Contract Water Supplies, including Water
+Supply Entitlements or Water Supply Agreements, that are derived
+from local, regional, state, and federal water agencies. These contracts
+may include wholesale delivery contracts, contracts based upon state
+and federal water projects, and localized contracts between regional
+entities for surface or groundwater. Suppliers will make their own
+determination as to whether they use water contracts to divert and
+deliver water supplies to their customers.",,,"Water imported - Bulk water purchased to become part of the Water Supplied volume. Typically this is water purchased from a neighboring water utility or regional water authority, and is metered at the custody transfer point of interconnection between the two water utilities. Usually the meter(s) are owned by the water supplier selling the water to the utility conducting the water audit. The water supplier selling the bulk water usually charges the receiving utility based upon a wholesale water rate.",,
+Water supply,Imported/purchased water suppplied ,Exchanges,"Exchanges - Water exchanges are typically water delivered by one water user to
+another water user, with the receiving water user providing water in
+return at a specified time or when the conditions of the parties’
+agreement are met. Water exchanges can be strictly a return of water
+on a basis agreed upon by the participants or it can include payment
+and the return of water. The water returned may or may not be an
+even exchange; water can be returned on a one-for-one basis or by
+another arrangement (e.g., for each acre-foot of water received, two
+acre-feet are returned).",,,,,
+Water supply,Imported/purchased water suppplied ,Transfers,"Transfer - The Water Code defines a water transfer as a temporary or long-term
+change in the point of diversion, place of use, or purpose of use due to
+a transfer, sale, lease, or exchange of water or water rights.",,,,,
+Water supply,Non potable water supplied ,Stormwater,"Stormwater - Stormwater that is being intentionally diverted for beneficial reuse, Beneficial uses can include blending with other waters
+supplies for groundwater recharge, redirecting it into constructed
+wetlands or landscaping, and diverting it to a treatment facility for
+subsequent reuse.",,,,,
+Water supply,Potable water supply,Total Potable Water Supply ,,"Total potable water production - All potable water that enters into a water supplier’s distribution system, excluding water placed into storage and not withdrawn for use during the reporting period and excluding water exported outsider the supplier’s service area during the reporting period. Total Potable Water Production includes all non-revenue waters. Given this, the water exported (its supply net exports) is not captured in this report.",,,,
+Water supply,Recycled water supplied,Wastewater and recycled water,"Recycled water - Municipal recycled water is municipal wastewater that has been
+treated to a specified quality to enable it to be used again for a
+beneficial purpose. The term recycled water is defined in the Water
+Code more broadly than municipal recycled water. For purposes of the
+UWMPs, recycled water means only municipal recycled water, that is,
+water that has been treated and discharged from a municipal
+wastewater facility.
+There are two requirements treated municipal wastewater must meet
+to be classified as recycled water:
+1. It must be reused beneficially, in a manner consistent with Title
+22;
+2. It must be reused in accordance with a Regional Water Quality
+Control Board permit such as National Pollutant Discharge
+Elimination System, waste discharge requirement, or water
+recycling requirement.",,,,,
+Water supply,Surface water supplied,Surface water,"Surface water - Water from streams, lakes, and reservoirs is considered a surface
+water supply for the purposes of the UWMP.",,,,,
+Water supply,Total volume water supplied,Available supply,,,,,,"Available supply - Water supplies as determined by current year conditions and should include information such as stored supplies, contracted supplies, and projected supplies based on current and recent historical influencing factors. Reported monthly by water supply type."
+Water supply,Volume from own sources,Water supply own sources,,,,"Own sources - The volume of water withdrawn (abstracted) from water resources (rivers, lakes, streams, wells, etc) controlled by the water utility, and then treated for potable water distribution. Most water audits are compiled for utility retail water distribution systems, so this volume should reflect the amount of treated drinking water that entered the distribution system. Often the volume of water measured at the effluent of the treatment works is slightly less than the volume measured at the raw water source, since some of the water is used in the treatment process. Thus, it is useful if flows are metered at the effluent of the treatment works. If metering exists only at the raw water source, an adjustment for water used in the treatment process should be included to account for water consumed in treatment operations such as filter backwashing, basin flushing and cleaning, etc. If the audit is conducted for a wholesale water agency that sells untreated water, then this quantity reflects the measure of the raw water, typically metered at the source.",,
+Water use,Agricultural irrigation use type,Agricultural irrigation use type,"Agricultural - Water used for commercial agricultural irrigation. Note that water used
+for processing agricultural products (e.g., food, beverage, or textile
+manufacturing) may be considered industrial process water, rather
+than an agricultural water use. Industrial process water may be
+excluded from gross water use for SB X7-7 calculations (see Chapter
+5). To be classified as industrial process water, the water use must fall
+under Sector 31, 32, or 33 of NAICS code (search the 2017 NAICS
+Manual for additional information:
+https://www.census.gov/eos/www/naics/). ",,Agricultural irrigation - Irrigation of commercially-grown crops,,,"Agricultural irrigation - Water used for commercial agricultural irrigation. Note that water used for processing agricultural products (e.g., food, beverage, or textile manufacturing) may be considered industrial process water, rather than an agricultural water use. Industrial process water may be excluded from gross water use for SB X7-7 calculations (see Chapter 5). To be classified as industrial process water, the water use must fall under Sector 31, 32, or 33 of NAICS code (search the 2017 NAICS Manual for additional information)."
+Water use,Billed use type,Billed metered,,,,"Billed metered - All metered consumption which is billed to retail customers, including all groups of customers such as domestic, commercial, industrial or institutional.  It does NOT include water supplied to neighboring utilities (water exported) which is metered and billed.  Be sure to subtract any consumption for exported water sales that may be included in these billing roles.  Water supplied as exports to neighboring water utilities should be included only in the Water Exported component.",,
+Water use,Billed use type,Billed unmetered,,,,"Billed unmetered - All billed consumption which is calculated based on estimates or norms from water usage sites that have been determined by utility policy to be left unmetered.  This is typically a very small component in systems that maintain a policy to meter their customer population.  However, this quantity can be the key consumption component in utilities that have not adopted a universal metering policy.   This component should NOT include any water that is supplied to neighboring utilities (water exported) which is unmetered but billed.  Water supplied as exports to neighboring water utilities should be included only in the Water Exported component.",,
+Water use,CII use type,Commercial use type,Commercial - A water user that provides or distributes a product or service. [Water Code Section 10608.12(e)].,,,,,
+Water use,CII use type,Commercial/industrial/institutional use type,"Institutional: A water user dedicated to public service. This type of user includes,
+among other users, higher-education institutions, schools, courts,
+churches, hospitals, government facilities, and nonprofit research
+institutions. Water Code Section 10608.12(j).",,"Commercial/industrial: Commercial water users such as retail establishments, office buildings, laundries, campgrounds, gas stations; and institutional water users such as schools, prisons, hospitals, dormitories, nursing homes, hotels",,,"Commercial/industrial/institutional: A water user that provides or distributes a product or service; a water user that is primarily a manufacturer or processor of materials as defined by the North American Industry Classification System (NAICS) code sectors 31 to 33, inclusive, or an entity that is a water user primarily engaged in research and development; A water user dedicated to public service. This type of user includes, among other users, higher-education institutions, schools, courts, churches, hospitals, government facilities, and nonprofit research institutions. CWC § 10608.12(j)"
+Water use,CII use type,Industrial use type,"Industrial - A water user that is primarily a manufacturer or processor of materials
+as defined by the North American Industry Classification System
+(NAICS) code sectors 31 to 33, inclusive, or an entity that is a water
+user primarily engaged in research and development. Water Code
+Section 10608.12(i). The following link is to the NAICS website:
+http://www.census.gov/cgi-bin/sssd/naics/naicsrch.",,"Industrial - All manufacturing establishments, such as factories, assembly plants, and other manufacturing industries",,,
+Water use,Groundwater recharge use type,Groundwater recharge use type,"Groundwater recharge - The managed and intentional replenishment of natural groundwater
+supplies using man-made conveyances such as infiltration basins or
+injection wells. Water used for groundwater banking or storage may
+also be reported using this sector. If all, or a portion of, the
+groundwater recharge water is subsequently pumped out of the basin
+in the same year, that water will be reported by the Supplier as a supply from groundwater. ",,,,,"Groundwater recharge - The managed and intentional replenishment of natural groundwater supplies using man-made conveyances such as infiltration basins or injection wells. Water used for groundwater banking or storage may also be reported using this sector. If all, or a portion of, the groundwater recharge water is subsequently pumped out of the basin in the same year, that water will be reported by the Supplier as a supply from groundwater."
+Water use,Landscape use type,Landscape use type,"Landscape - Water connections supplying water solely for landscape irrigation. Such
+landscapes may be associated with multi-family, commercial,
+industrial, or institutional/governmental sites, but are considered a
+separate water use sector if the connection is solely for landscape
+irrigation.",,"Landscape - Parks, play fields, cemeteries, median strips, golf courses",,,"Landscape - Water connections supplying water solely for landscape irrigation. Such landscapes may be associated with multi-family, commercial, industrial, or institutional/governmental sites, but are considered a separate water use sector if the connection is solely for landscape irrigation."
+Water use,Losses use type,Water Losseses,,,,Water losses - Sum of apparent losses and real losses,,
+Water use,Losses use type,Real losses,,,,"Real losses - Physical water losses from the pressurized potable water system and the utility's potable water storage tanks, up to the point of customer consumption.",,
+Water use,Losses use type,Apparent losses,,,,"Apparent losses - Losses due to unauthorized consumption and/or nonphysical (paper) losses attributed to inaccuracies associated with customer metering, or systematic handling errors.",,
+Water use,Losses use type ,Distribution system losses,Distribution system losses - Reporting distribution system losses is required by the Water Code.,,,,,
+Water use,Residential use type,Percent residential use,,Percent residential use - Calculated by dividing the amount of water provided to the residential sector for the reporting month (not including non-revenue water) by the “total potable water production” (see definition below in section 3b) for the reporting month.,,,,
+Water use,Residential use type,Single family use type,"Single family - A single-family dwelling unit. A lot with a free-standing building
+containing one dwelling unit that may include a detached secondary
+dwelling.",,"Single family residential - Single-family detached dwellings. If a Home Owner’s Association individually meters households, report those deliveries in this category. ",,,Single family - A single-family dwelling unit. A lot with a free-standing building containing one dwelling unit that may include a detached secondary dwelling
+Water use,Residential use type,Multi family use type,"Multi family - Multiple dwelling units contained within one building or several
+buildings within one complex.",,"Multi-family residential - Apartments, condominiums, town houses, duplexes, mobile home and trailer parks. If a Home Owner’s Association has a single master meter, report those deliveries in this category.",,,Multi family - Multiple dwelling units contained within one building or several buildings within one complex
+Water use,Sales/transfers/exchanges to other agencies use type,Sales to other agencies,"Sales - These are water sales made to another agency (referred to here as
+water Supplier). Projected sales may be based on projected demand
+provided by the receiving water Supplier. There is inherent uncertainty
+in future projections, therefore, any projected sales reported in the
+UWMP are for planning purposes only and are not considered a
+commitment on the part of the seller. This is a wholesale demand.
+Water suppliers will determine whether their demands are considered
+sales, transfers, or exchanges; reporting in the UWMPs will reflect the
+Suppliers’ determination of these water demands. Some Retail
+Suppliers also supply water to other Suppliers. This is considered a
+wholesale demand.",,,,,
+Water use,Sales/transfers/exchanges to other agencies use type,Other PWS,,,Other PWS - Total water sold or transferred to another public water system. Automatically copied from Table 6.A1 column F.,,,
+Water use,Sales/transfers/exchanges to other agencies use type,Exchanges,"Exchanges - Suppliers will make a determination as to whether water sent to
+another Supplier is a sale, transfer, or exchange. This is a wholesale
+demand.
+Water exchanges are typically water delivered by one water user to
+another water user, with the receiving water user returning the water
+at a specified time, or when the conditions of the parties’ agreement
+are met. Water exchanges can be strictly a return of water on a basis
+agreed upon by the participants or can include payment and the return
+of water. The water returned may or may not be an even exchange.
+Water can be returned on a one-for-one basis or by another arrangement (e.g., for each acre-foot of water received, two are
+returned).",,,,,
+Water use,Sales/transfers/exchanges to other agencies use type,Transfers,"Transfers - Suppliers will make a determination as to whether water sent to
+another Supplier is a sale, transfer, or exchange. This is a wholesale
+use.
+The Water Code defines a water transfer as a temporary or long-term
+change in the point of diversion, place of use, or purpose of use due to
+a transfer, sale, lease, or exchange of water or water rights. Transfers
+can be between neighboring Suppliers or across the state, provided
+there is a means to convey or store the water. A water transfer can be
+a temporary or permanent sale of water or a water right by the water
+right holder, a lease of the right to use water from the water right
+holder, or a sale or lease of a contractual right to water supply. Water
+transfers can also take the form of long-term contracts of the purpose
+of improving long-term supply reliability.
+Some Retail Suppliers transfer water to other Suppliers. ",,,,,
+Water use,Saline water intrusion barrier use type,Saline water intrusion barrier use type,"Saltwater intrusion barrier - Injection of water into a freshwater aquifer to prevent the intrusion of
+saltwater.",,,,,"Saltwater intrusion barrier - Injection of water into a freshwater aquifer to prevent the intrusion of
+saltwater."
+Water use,Surface water augmentation use type,Surface water augmentation use type,"Surface water augmentation - The planned placement of recycled water into a surface water reservoir
+that is used as a source of domestic drinking water supply (see
+Chapter 6, Section 6.2.5 Recycled Water). This is also referred to as
+Reservoir Water Augmentation in Tables 6-4 and 6-5 and in Appendix
+M.",,,,,
+Water use,Total volume water demand,Authorized consumption,,,,"Authorized consumption - Volume of water taken by registered customers, the water supplier, and others who are implicitly or explicitly authorized to do so. Authorized consumption may be billed or unbilled, metered or unmetered.",,
+Water use,Total volume water demand,Unconstrained demand,,,,,,Unconstrained demand - Water demand absent any water supply and demand restriction reported monthly by water use type (see water use types in related definitions)
+Water use,Total volume water demand,Actual water use and water use objective,,,,,"Water use objective - The guidance for this report has not yet been released. The following water use categories are required components but have not yet been defined. Indoor residential water use, outdoor residential water use, outdoor irrigation of landscape, water loss, water use for approved variances, potable reused bonus incentive adjustment",
+Water use,Total volume water demand,Gross water use,"Goss water use - the total volume of water,
+whether treated or untreated, entering the distribution
+system of an urban retail water supplier, excluding all of
+the following:
+(1) Recycled water that is delivered within the service
+area of an urban retail water supplier or its urban
+wholesale water supplier
+(2) The net volume of water that the urban retail water
+supplier places into long term storage
+(3) The volume of water the urban retail water supplier
+conveys for use by another urban water supplier
+(4) The volume of water delivered for agricultural use,
+except as otherwise provided in subdivision (f) of Section
+10608.24.
+California Code of Regulations Title 23 Division 2 Chapter
+5.1 Article 1 Section 596
+(a) An urban retail water supplier that has a substantial
+percentage of industrial water use in its service area is
+eligible to exclude the process water use of existing
+industrial water customers from the calculation of its gross
+water use to avoid a disproportionate burden on another
+customer sector. Water Code Section 10608.12",,,,,
+Water use,Unbilled use type,Unbilled metered,,,,"Unbilled metered - Metered consumption which is authorized by the water utility, but, for any reason, is deemed by utility policy to be unbilled.  This might for example include metered water consumed by the utility itself in treatment or distribution operations, or metered water provided to civic institutions free of charge.  It does not include water supplied to neighboring utilities (water exported) which may be metered but not billed.",,
+Water use,Unbilled use type,Unbilled unmetered,,,,"Unbilled metered - Any kind of Authorized Consumption which is neither billed or metered.  This component typically includes water used in activities such as fire fighting, flushing of water mains and sewers, street cleaning, fire flow tests conducted by the water utility, etc.  In most water utilities it is a small component which is very often substantially overestimated.  It does NOT include water supplied to neighboring utilities (water exported) which is unmetered and unbilled – an unlikely case.",,
+Water use,Losses use type,Non-revenue water use type,,"Non-revenue water - Includes water lost due to system leaks and thefts, and non-billed water used to fight fires. ",,Non-revenue water - Portion of water consumption that is not billed and does not produce revenue. It equals the unbilled authorized consumption plus apparent and real losses.,,
+Water use,Wetlands or wildlife habitat use type,Wetlands or wildlife habitat use type,"Wetlands or wildlife habitat - Water used for a managed environmental use to improve an
+environmental condition.",,,,,"Wetlands or wildlife habitat - Water used for a managed environmental use to improve an
+environmental condition."
+,,Unauthorized consumption,,,,,,
