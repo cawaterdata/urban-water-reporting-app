@@ -87,8 +87,9 @@ shinyUI(
                                     multiple = T)),
                       mainPanel(textOutput("definitions_label"),
                                 tags$br(),
-                                DT::dataTableOutput("definitions_table"))
-             # tabPanel("Documentation")
-             )
+                                DT::dataTableOutput("definitions_table"))),
+             tabPanel("Resources",
+                      mainPanel(
+                        htmlOutput("resources_links")))
 )
 )

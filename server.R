@@ -105,5 +105,81 @@ output$metric_comparison_matrix <- renderFormattable({
               list(area(col = 2:ncol(dat)) ~ color_tile("transparent", "pink")))
 })
 
+# resources tab -----------------------------------------------------------
+
+output$resources_links <- renderText(paste(
+  tags$div(
+  tags$h4("Annual Supply and Demand Assessment"),
+  tags$ul(
+    "DWR. 2021. Urban Water Management Plan: Draft Annual Water Supply and Demand Assessment 2021 (Appendix Q).",
+    "DWR. 2021. Urban Water Management Plan Guidebook 2020."),
+  tags$h4("Electronic Annual Report"),
+  tags$ul(
+    tags$li(tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/ear.html", "EAR Homepage")),
+    tags$li(tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/ear/ear_input_forum/2020_ear_blank.pdf",
+           "Full 2020 EAR")),
+    tags$li(tags$a(href = "https://ear.waterboards.ca.gov/Content/2020EARHelp.htm", "EAR Help Document and Dictionary")),
+    tags$li(tags$a(href = "https://ear.waterboards.ca.gov/PwsUser/ReadFAQ", " EAR FAQ describing uses of data")),
+    tags$li("Section 116530 of the Health and Safety Code"),
+    tags$ul(
+      tags$li(tags$a(href = "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HSC&sectionNum=116530",
+           "Current law")),
+      tags$li(tags$a(href = "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=199519960SB1360#:~:text=116530",
+           "Pre-2019 version of the law"))),
+    tags$li(tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/waterpartnerships/what_is_a_public_water_sys.pdf",
+           "What is a public water system?"))
+  ),
+  tags$h4("Monthly Urban Water Conservation Report"),
+  tags$ul(
+    tags$li(tags$a(href ="https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/water_conserva	tion_reports/",  "Overview Website")),
+    tags$li(tags$a(href = "https://calwaterdata.sharepoint.com/:w:/r/sites/WorkingGroups/Shared%20Documents/General/Pilot%20Projects/2021/Urban%20Water%20Pilot%20Project/Report/Conservation%20Report/Adopted%20Conservation%20Report%20Regulations_Clean_042120.docx?d=wb1b82ddc3f104bef90bc5e0ca0042072&csf=1&web=1&e=yCqOe4",
+                   "Regulation text")),
+    tags$li(tags$a(href = "https://calwaterdata.sharepoint.com/:b:/r/sites/WorkingGroups/Shared%20Documents/General/Pilot%20Projects/2021/Urban%20Water%20Pilot%20Project/Report/Conservation%20Report/Conservation%20Report%20Rationale.pdf?csf=1&web=1&e=cgYdtc",
+                   "Regulation Rationale")),
+    tags$li(tags$a(href = "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/docs/definitions_and_data_dictionary_accessible.pdf",
+                   "Definitions and Data Dictionary for the Urban Water Supplier Monthly Reports Dataset")),
+    tags$li(tags$a(href = "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/docs/emergency	_response_data_dictionary_accessible.pdf",
+                   "Definitions and Data Dictionary for the Water Shortage Emergency Response Actions Dataset")),
+    tags$li(tags$a(href = "https://data.ca.gov/dataset/drinking-water-public-water-system-operations-monthly-water-	production-and-conservation-information",
+                   "Data"))
+    ),
+  tags$h4("Urban Water Management Plan"),
+  tags$ul(
+    tags$li(tags$a(href = "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Urban-Water-Management-Plans",
+                   "Overview Website")),
+    tags$li(tags$a(href = "https://wuedata.water.ca.gov/secure/login_auth.asp?msg=inactivity&referer=/secure/Default.asp?",
+                   "WUE Data Portal (Water Systems)")),
+    tags$li(tags$a(href = "https://wuedata.water.ca.gov/",
+                   "WUE Data Portal (public)"))
+  ),
+  tags$h4("Water Loss Audit"),
+  tags$ul(
+    tags$li(tags$a(href = "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Validated-Water-Loss-Reporting",
+                   "DWR Urban Water Loss Webpage")),
+    tags$li(tags$a(href = "https://govt.westlaw.com/calregs/Document/IECFD4F5BC02E41D5AC7854B0DC086F2D?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1",
+                   "Regulations for Urban Water Retailers")),
+    tags$li(tags$a(href = "https://water.ca.gov/-/media/DWR-Website/Web-Pages/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Validated-Water-Loss-Reporting/Final-of-Wholesale-Water-Loss-Legislative-Report_Feb-18-2020_a.pdf",
+                   "Wholesale Reporting Recommendations")),
+    tags$li(tags$a(href = "https://www.awwa.org/Portals/0/files/publications/documents/M36LookInside.pdf",
+                   "Water industry standard and protocol for water-loss audits in the United States")),
+    tags$li(tags$a(href = "https://wuedata.water.ca.gov/public/awwa_uploads/9152234733/AWWA-WAS-v5-09152014_CY2019_VALID.xls",
+                   "Water Balance tab of AWWA xlsx")),
+    tags$li(tags$a(href = "https://wuedata.water.ca.gov/public/awwa_uploads/9152234733/AWWA-WAS-v5-09152014_CY2019_VALID.xls",
+                   "Definitions tab of AWWA xlsx sheet"))
+  ),
+  tags$h4("Water Use Objective"),
+  tags$ul(
+    tags$li(tags$a(href = "https://water.ca.gov/Programs/Water-Use-And-Efficiency/2018-Water-Conservation-Legislation/Urban-Water-Use-Efficiency-Standards-and-Water-Use-Objective",
+                   "Water Use Objective Webpage")),
+    tags$li(tags$a(href = "https://medium.com/california-data-collaborative/latest-proposals-from-dwr-on-californias-water-efficiency-framework-b078fb300cd7",
+                   "Tull, Christopher. 2021. Latest proposals from DWR on California’s Water Efficiency Framework: Over 3 workshops, DWR revealed their most comprehensive outline yet of what will be required of urban water suppliers. Published on Medium. Accessed January 31, 2022."),
+            ),
+    tags$li("DWR. 2021. Report to the Legislature on the Results of the Indoor Residential Water Use Study."),
+    tags$li("DWR. 2021. Appendices A-J of the Report to the Legislature on the Results of the Indoor Residential Water use Study.")
+  )
+  )
+))
+
 
 }
+
