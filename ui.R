@@ -15,7 +15,10 @@ shinyUI(
                             selected = c("Electronic Annual Report",
                                          "Urban Water Management Plan")
                           )),
-                          mainPanel(DT::dataTableOutput("overview_table"))
+                          mainPanel(textOutput("project_summary_text"),
+                                    tags$br(),
+                                    h3("Summary of reporting requirements"),
+                                    DT::dataTableOutput("overview_table"))
                         )
                       ),
              # tabPanel("Data reported",

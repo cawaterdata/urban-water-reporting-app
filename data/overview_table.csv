@@ -1,4 +1,4 @@
-report,agency,legislation,required,number,due,frequency,aggregation,status
+Report Name,Agency,Legislation,Required For,Number Required,Due,Frequency,Aggregation,Status
 Urban Water Management Plan,DWR,"WC §10608, WC §10610-10656, AB 1668, SB 606",Urban water supplier,395,1-Jul,every 5 years,"Annually, 5-Year",Current
 Monthly Urban Water Conservation Report,SWRCB,CR 23 § 991,Urban water supplier not including suppliers functioning only as wholesalers,413,every month,Monthly,Montly,Current
 Electronic Annual Report,SWRCB,"WC §10609.61, CHSC 116530",Every public water system,3803,Feb-Mar,Annually,Monthly,Current

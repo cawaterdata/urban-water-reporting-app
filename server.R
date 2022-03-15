@@ -4,10 +4,24 @@ server <- function(input, output, session) {
 # overview tab ------------------------------------------------------------
   overview_filter <- reactive({
     overview_dat %>%
-      filter(report %in% input$overview_report_list)
+      filter(`Report Name` %in% input$overview_report_list)
   })
   
   output$overview_table <- renderDataTable(overview_filter())
+  
+  output$project_summary_text <- renderText("The Urban Water Reporting project is being led by the 
+                                            California Water Data Consortium (Consortium). The Consortium 
+                                            will identify opportunities to align current water 
+                                            supply and use data collected and reported by local 
+                                            and wholesale water agencies with State agency 
+                                            reporting requirements to improve data use, reduce 
+                                            reporting burden, and expand access to timely, 
+                                            interoperable, high-quality, secure, reliable data. 
+                                            In addition to improving public understanding and 
+                                            access to core water supply and use data, these 
+                                            data services will provide the source data needed 
+                                            to generate critical information for managing water 
+                                            resources.")
   
   # need to make table headers readable; probably don't need filter; could add 
   # some background/explanation text
