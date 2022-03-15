@@ -50,6 +50,9 @@ shinyUI(
                                                   "Other"),
                                       selected = "Total Water Supply"
                           ),
+                          switchInput("show_subcategories",
+                                      label = "Show Subcategories"
+                          ), 
                           switchInput("delta_or_percent_delta_switch",
                                       label = "Percent Delta"
                           )),

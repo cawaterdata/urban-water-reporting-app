@@ -36,6 +36,7 @@ definition_group_use <- definition_group_use$`Definition group`
 # TODO update data after we finish quantitative analysis 
 delta_metrics_data <- read_rds("data/urban_water_reporting_data.rds") 
 volume_metrics_data <- read_rds("data/supply_and_demand_volume_af.rds")
+volume_metrics_data_with_subcategories <- read_rds("data/supply_and_demand_volume_af_with_subcategories.rds")
 
 report_abbreviations <- c("ASADA", "EAR", "CR", "UWMP", "WLR", "WUO")
 names(report_abbreviations) <- c("Annual Supply and Demand Assessment", 
