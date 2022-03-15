@@ -29,11 +29,11 @@ server <- function(input, output, session) {
 # definitions tab ---------------------------------------------------------
 
 definitions_filter <- reactive({
-  definitions_dat %>%
-    filter(`Report name` %in% report_abbreviations[input$definitions_report_list],
+  filter <- definitions_dat %>%
+    filter(`Report name` %in% input$definitions_report_list,
            `Water type` %in% input$water_type_dropdown,
            `Definition group` %in% input$defintions_group_dropdown) %>%
-    pivot_wider(id_cols = `Water type`:Term, names_from = "Report name", values_from = "Definition") 
+      pivot_wider(id_cols = `Water type`:Term, names_from = "Report name", values_from = "Definition") 
   })
   
 output$definitions_table <- renderDataTable(definitions_filter() %>%

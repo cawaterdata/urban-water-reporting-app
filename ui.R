@@ -21,37 +21,6 @@ shinyUI(
                                     DT::dataTableOutput("overview_table"))
                         )
                       ),
-             # tabPanel("Data reported",
-             #          sidebarLayout(
-             #            sidebarPanel(
-             #              checkboxGroupInput("data_report_list",
-             #               label = "Urban Water Reports",
-             #                choices = c("Annual Supply and Demand Assessment",
-             #                            "Electronic Annual Report",
-             #                            "Monthly Urban Water Conservation Report",
-             #                            "Urban Water Management Plan",
-             #                            "Water Loss Audit",
-             #                            "Water Use Objective"),
-             #                selected = c("Electronic Annual Report",
-             #                             "Urban Water Management Plan")
-             #              ),
-             #              selectInput("data_type_dropdown",
-             #                label = "Water data type",
-             #                choices = c("All",
-             #                            "Water Use",
-             #                            "Water Supply",
-             #                            "Other"),
-             #                selected = "All"
-             #              ),
-             #              shinyWidgets:switchInput("data_overlap_switch",
-             #                label = "Show only data similarities",
-             #                value = T,
-             #                onStatus = ,
-             #                offStatus = 
-             #              )),
-             #              mainPanel(DT:datatable())
-             #            )
-             #          ),
              tabPanel("Data comparisons",
                       sidebarLayout(
                         sidebarPanel(
@@ -114,7 +83,8 @@ shinyUI(
                         selectInput("defintions_group_dropdown",
                                     "Select definition group",
                                     choices = definition_group_use,
-                                    selected = "Residential use type")),
+                                    selected = "Residential use type",
+                                    multiple = T)),
                       mainPanel(textOutput("definitions_label"),
                                 tags$br(),
                                 DT::dataTableOutput("definitions_table"))

@@ -20,14 +20,17 @@ definitions_dat <- definitions_dat_raw %>%
   pivot_longer(cols = UWMP:AWSDA, names_to = "Report name", values_to = "Definition") %>%
   filter(!is.na(Definition)) %>%
   # TODO fix in data
-  mutate(`Report name` = ifelse(`Report name` == "AWSDA", "ASADA", `Report name`)) 
+  mutate(`Report name` = ifelse(`Report name` == "AWSDA", "ASADA", `Report name`),
+         `Report name` = ifelse(`Report name` %in% report_abbreviations, names(report_abbreviations), `Report name`)) 
 
 definition_group_supply <- filter(definitions_dat, `Water type` == "Water supply") %>%
-  distinct(`Definition group`)
+  distinct(`Definition group`) %>%
+  arrange(`Definition group`)
 definition_group_supply <- definition_group_supply$`Definition group`
 
 definition_group_use <- filter(definitions_dat, `Water type` == "Water use") %>%
-  distinct(`Definition group`)
+  distinct(`Definition group`) %>%
+  arrange(`Definition group`)
 definition_group_use <- definition_group_use$`Definition group`
 
 # TODO update data after we finish quantitative analysis 
