@@ -1,6 +1,6 @@
 shinyUI(
   navbarPage("California urban water reporting", id = "main_navbar",
-             theme = shinythemes::shinytheme("lumen"),
+             theme = shinythemes::shinytheme("flatly"),
              tabPanel("Overview",
                       sidebarLayout(
                         sidebarPanel(
@@ -86,34 +86,36 @@ shinyUI(
                                   hr(),
                                   br(),
                                   formattable::formattableOutput("metric_comparison_matrix"))
-                      ))
-             # tabPanel("Definitions",
-             #          sidebarPanel(
-             #            checkboxGroupInput("definitions_report_list",
-             #                               label = "Urban Water Reports",
-             #                               choices = c("Annual Supply and Demand Assessment",
-             #                                           "Electronic Annual Report",
-             #                                           "Monthly Urban Water Conservation Report",
-             #                                           "Urban Water Management Plan",
-             #                                           "Water Loss Audit",
-             #                                           "Water Use Objective"),
-             #                               selected = c("Electronic Annual Report",
-             #                                            "Urban Water Management Plan")),
-             #            shinyWidgets::switchInput("definitions_data_type_switch",
-             #                                      label = "Select water use or supply definitions",
-             #                                      value = T,
-             #                                      onStatus = ,
-             #                                      offStatus = 
-             #                                      ),
-             #            selectInput("defintions_group_dropdown",
-             #                        "Select definition group",
-             #                        choices = c(""),
-             #                        selected = c("")),
-             #            selectInput("definition_term_dropdown",
-             #                        "Select the definition term",
-             #                        choices = c(""),
-             #                        selected = c(""))),
-             #          mainPanel()),
+                      )),
+             tabPanel("Definitions",
+                      sidebarPanel(
+                        checkboxGroupInput("definitions_report_list",
+                                           label = "Urban Water Reports",
+                                           choices = c("Annual Supply and Demand Assessment",
+                                                       "Electronic Annual Report",
+                                                       "Monthly Urban Water Conservation Report",
+                                                       "Urban Water Management Plan",
+                                                       "Water Loss Audit",
+                                                       "Water Use Objective"),
+                                           selected = c("Annual Supply and Demand Assessment",
+                                                        "Electronic Annual Report",
+                                                        "Monthly Urban Water Conservation Report",
+                                                        "Urban Water Management Plan",
+                                                        "Water Loss Audit",
+                                                        "Water Use Objective")),
+                        selectInput("water_type_dropdown",
+                                    "Select water use or supply",
+                                    choices = c("Water supply",
+                                                "Water use"),
+                                    selected = "Water use"),
+                        selectInput("defintions_group_dropdown",
+                                    "Select definition group",
+                                    choices = definition_group_use,
+                                    selected = "Residential use type")),
+                      mainPanel(textOutput("definitions_label"),
+                                tags$br(),
+                                DT::dataTableOutput("definitions_table"))
              # tabPanel("Documentation")
              )
+)
 )

@@ -1,4 +1,4 @@
-server <- function(input, output) {
+server <- function(input, output, session) {
   
 
 # overview tab ------------------------------------------------------------
@@ -12,6 +12,35 @@ server <- function(input, output) {
   # need to make table headers readable; probably don't need filter; could add 
   # some background/explanation text
 
+# definitions tab ---------------------------------------------------------
+
+definitions_filter <- reactive({
+  definitions_dat %>%
+    filter(`Report name` %in% report_abbreviations[input$definitions_report_list],
+           `Water type` %in% input$water_type_dropdown,
+           `Definition group` %in% input$defintions_group_dropdown) %>%
+    pivot_wider(id_cols = `Water type`:Term, names_from = "Report name", values_from = "Definition") 
+  })
+  
+output$definitions_table <- renderDataTable(definitions_filter() %>%
+                                              select(-c(`Water type`, `Definition group`)))
+output$definitions_label <- renderText(paste(input$defintions_group_dropdown, "definitions"))
+
+observe({
+  water_type <- input$water_type_dropdown
+  if(water_type == "Water supply") {
+    updateSelectInput(session, "defintions_group_dropdown",
+                      "Select definition group",
+                      choices = definition_group_supply,
+                      selected = "Imported/purchased water suppplied")
+  } else {
+    updateSelectInput(session, "defintions_group_dropdown",
+                      "Select definition group",
+                      choices = definition_group_use,
+                      selected = "Residential use type")
+  }
+  
+})
 
 #  quantitative analysis tab ---------------------------------------------------
 
