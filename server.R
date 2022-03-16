@@ -59,16 +59,32 @@ observe({
 #  quantitative analysis tab ---------------------------------------------------
 
 output$metric_comparison_plot <- renderPlot({
-  ggplot(volume_metrics_data %>% 
-           filter(report %in% report_abbreviations[input$data_compare_report_list],
-                  metric %in% input$data_compare_type_dropdown, 
-                  agency == input$agency_dropdown ),
+  if (input$show_subcategories == FALSE) {
+  filtered_data <- volume_metrics_data %>% 
+      filter(report %in% report_abbreviations[input$data_compare_report_list],
+             metric %in% input$data_compare_type_dropdown, 
+             agency == input$agency_dropdown )
+    ggplot(filtered_data,
          aes(y = report, x = volume_af, fill = report)) +
     geom_col() + 
     labs(x = input$data_compare_type_dropdown, y = "") +
     theme_minimal() +
     theme(legend.position="none", text = element_text(size=18)) + 
     scale_fill_manual(values = wesanderson::wes_palette("Royal2"))
+  } else {
+    #TODO improve colors for subcategories 
+    filtered_data <- volume_metrics_data_with_subcategories %>% 
+      filter(report_name %in% report_abbreviations[input$data_compare_report_list],
+             parent_metric %in% input$data_compare_type_dropdown, 
+             supplier_name == input$agency_dropdown)
+    ggplot(filter(filtered_data, !is.na(use_group)), aes(y = report_name, x = volume_af, fill = use_group)) +
+      geom_col() + 
+      labs(x = "Reported Annual AF Demand", y = "", 
+           title = "Reported Annual Water Demand Across Reporting Requirements") +
+      theme_minimal() +
+      theme(text = element_text(size=18)) + 
+      scale_fill_manual(values = colors) 
+  }
 })
 
 clean_na = function(x){
@@ -182,4 +198,5 @@ output$resources_links <- renderText(paste(
 
 
 }
+
 

@@ -6,6 +6,7 @@ library(readr)
 library(tidyverse)
 library(dplyr)
 library(formattable)
+library(plotly)
 
 
 # Overview table ----------------------------------------------------------
@@ -36,6 +37,13 @@ definition_group_use <- definition_group_use$`Definition group`
 # TODO update data after we finish quantitative analysis 
 delta_metrics_data <- read_rds("data/urban_water_reporting_data.rds") 
 volume_metrics_data <- read_rds("data/supply_and_demand_volume_af.rds")
+volume_metrics_data_with_subcategories <- read_rds("data/supply_and_demand_volume_af_with_subcategories.rds") %>% 
+  mutate(supplier_name = case_when(supplier_name == "Santa Fe Irrigation District" ~ "Santa Fe Irrigation District",
+                                   supplier_name == "City of Napa" ~ "City of Napa",
+                                   supplier_name == "SANTA FE I.D." ~ "Santa Fe Irrigation District",
+                                   supplier_name == "NAPA, CITY OF" ~ "City of Napa",
+                                   supplier_name == "Napa  City of" ~ "City of Napa",
+                                   supplier_name == "Napa  City Of" ~ "City of Napa"))
 
 report_abbreviations <- c("ASADA", "EAR", "CR", "UWMP", "WLR", "WUO")
 names(report_abbreviations) <- c("Annual Supply and Demand Assessment", 
@@ -44,4 +52,6 @@ names(report_abbreviations) <- c("Annual Supply and Demand Assessment",
                                  "Urban Water Management Plan",
                                  "Water Loss Audit",
                                  "Water Use Objective")
+
+colors <- c("#9A8822", "#899DA4", "#C93312", "#F8AFA8", "#DC863B", "#FDDDA0", "#74A089", "#E1BD6D", "#FAEFD1", "#DC863B") 
 
