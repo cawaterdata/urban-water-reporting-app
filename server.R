@@ -64,7 +64,7 @@ output$metric_comparison_plot <- renderPlot({
       filter(report %in% report_abbreviations[input$data_compare_report_list],
              metric %in% input$data_compare_type_dropdown, 
              agency == input$agency_dropdown )
-  ggplot(filtered_data,
+    ggplot(filtered_data,
          aes(y = report, x = volume_af, fill = report)) +
     geom_col() + 
     labs(x = input$data_compare_type_dropdown, y = "") +
@@ -82,7 +82,8 @@ output$metric_comparison_plot <- renderPlot({
       labs(x = "Reported Annual AF Demand", y = "", 
            title = "Reported Annual Water Demand Across Reporting Requirements") +
       theme_minimal() +
-      theme(text = element_text(size=18)) 
+      theme(text = element_text(size=18)) + 
+      scale_fill_manual(values = c(wesanderson::wes_palette("Royal2"), wesanderson::wes_palette("Royal1"), "#E1BD6D")) 
   }
 })
 
