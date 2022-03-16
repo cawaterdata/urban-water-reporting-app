@@ -53,3 +53,5 @@ names(report_abbreviations) <- c("Annual Supply and Demand Assessment",
                                  "Water Loss Audit",
                                  "Water Use Objective")
 
+colors <- c("#9A8822", "#899DA4", "#C93312", "#F8AFA8", "#DC863B", "#FDDDA0", "#74A089", "#E1BD6D", "#FAEFD1", "#DC863B") 
+

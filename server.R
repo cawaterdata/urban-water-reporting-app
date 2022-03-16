@@ -83,7 +83,7 @@ output$metric_comparison_plot <- renderPlot({
            title = "Reported Annual Water Demand Across Reporting Requirements") +
       theme_minimal() +
       theme(text = element_text(size=18)) + 
-      scale_fill_manual(values = c(wesanderson::wes_palette("Royal2"), wesanderson::wes_palette("Royal1"), "#E1BD6D")) 
+      scale_fill_manual(values = colors) 
   }
 })
 
