@@ -73,7 +73,7 @@ output$metric_comparison_plot <- renderPlot({
     scale_fill_manual(values = wesanderson::wes_palette("Royal2"))
   } else {
     #TODO improve colors for subcategories 
-    filtered_data <- volume_metrics_data_with_subcategories %>% 
+    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group)) %>% 
       filter(report_name %in% report_abbreviations[input$data_compare_report_list],
              parent_metric %in% input$data_compare_type_dropdown, 
              supplier_name == input$agency_dropdown)
