@@ -19,10 +19,7 @@ overview_dat <- read_csv("data/overview_table.csv")
 definitions_dat_raw <- read_csv("data/data_dictionary.csv")
 definitions_dat <- definitions_dat_raw %>%
   pivot_longer(cols = UWMP:AWSDA, names_to = "Report name", values_to = "Definition") %>%
-  filter(!is.na(Definition)) %>%
-  # TODO fix in data
-  mutate(`Report name` = ifelse(`Report name` == "AWSDA", "ASADA", `Report name`),
-         `Report name` = ifelse(`Report name` %in% report_abbreviations, names(report_abbreviations), `Report name`)) 
+  filter(!is.na(Definition))
 
 definition_group_supply <- filter(definitions_dat, `Water type` == "Water supply") %>%
   distinct(`Definition group`) %>%
