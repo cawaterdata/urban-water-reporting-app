@@ -26,9 +26,10 @@ shinyUI(
                         sidebarPanel(
                           selectInput("agency_dropdown",
                                       label = "Agency",
-                                      choices = c("City of Napa",
-                                                  "Santa Fe Irrigation District"),
-                                      selected = "City of Napa"
+                                      choices = c("Agency 1",
+                                                  "Agency 2", 
+                                                  "Agency 3"),
+                                      selected = "Agency 1"
                           ),
                           checkboxGroupInput("data_compare_report_list",
                                              label = "Urban Water Reports",
@@ -54,9 +55,9 @@ shinyUI(
                                       label = "Show Subcategories"
                           ), 
                           switchInput("delta_or_percent_delta_switch",
-                                      label = "Percent Delta"
+                                      label = "Percent Difference"
                           )),
-                        mainPanel(plotOutput("metric_comparison_plot"), 
+                        mainPanel(plotlyOutput("metric_comparison_plot"), 
                                   br(), 
                                   hr(),
                                   br(),
