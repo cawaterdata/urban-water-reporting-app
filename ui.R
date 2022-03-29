@@ -1,6 +1,6 @@
 shinyUI(
   navbarPage("California urban water reporting", id = "main_navbar",
-             theme = shinythemes::shinytheme("flatly"),
+             theme = shinythemes::shinytheme("yeti"),
              tabPanel("Overview",
                       sidebarLayout(
                         sidebarPanel(

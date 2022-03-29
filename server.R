@@ -81,10 +81,11 @@ output$metric_comparison_plot <- renderPlotly({
     
     ggplotly(ggplot(filter(filtered_data, !is.na(use_group)), aes(y = report_name, x = volume_af, fill = use_group)) +
       geom_col() +
-      labs(x = "Reported Annual AF Demand", y = "",
-           title = "Reported Annual Water Demand Across Reporting Requirements") +
+      labs(x = "Reported Annual AF Demand", y = "") +
       theme_minimal() +
-      theme(text = element_text(size=18)) +
+      theme(text = element_text(size=18),
+            legend.title = element_blank(),
+            legend.text = element_text(size = 10)) +
       scale_fill_manual(values = colors))
   }
 })
