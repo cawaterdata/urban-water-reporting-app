@@ -2,24 +2,10 @@ shinyUI(
   navbarPage("California urban water reporting", id = "main_navbar",
              theme = shinythemes::shinytheme("yeti"),
              tabPanel("Overview",
-                      sidebarLayout(
-                        sidebarPanel(
-                          checkboxGroupInput("overview_report_list",
-                            label = "Urban Water Reports",
-                            choices = c("Annual Water Supply and Demand Assessment",
-                                        "Electronic Annual Report",
-                                        "Monthly Urban Water Conservation Report",
-                                        "Urban Water Management Plan",
-                                        "Water Loss Audit",
-                                        "Water Use Objective"),
-                            selected = c("Electronic Annual Report",
-                                         "Urban Water Management Plan")
-                          )),
-                          mainPanel(textOutput("project_summary_text"),
-                                    tags$br(),
-                                    h3("Summary of reporting requirements"),
-                                    DT::dataTableOutput("overview_table"))
-                        )
+                      textOutput("project_summary_text"),
+                      tags$br(),
+                      h3("Summary of reporting requirements"),
+                      DT::dataTableOutput("overview_table")
                       ),
              tabPanel("Data comparisons",
                       sidebarLayout(

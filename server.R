@@ -2,12 +2,7 @@ server <- function(input, output, session) {
   
 
 # overview tab ------------------------------------------------------------
-  overview_filter <- reactive({
-    overview_dat %>%
-      filter(`Report Name` %in% input$overview_report_list)
-  })
-  
-  output$overview_table <- renderDataTable(overview_filter())
+  output$overview_table <- renderDataTable(overview_dat, rownames = F)
   
   output$project_summary_text <- renderText("The Urban Water Reporting project is being led by the 
                                             California Water Data Consortium (Consortium). The Consortium 
