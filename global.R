@@ -18,7 +18,7 @@ overview_dat <- read_csv("data/overview_table.csv")
 
 definitions_dat_raw <- read_csv("data/data_dictionary.csv")
 definitions_dat <- definitions_dat_raw %>%
-  pivot_longer(cols = UWMP:AWSDA, names_to = "Report name", values_to = "Definition") %>%
+  pivot_longer(cols = `Urban Water Management Plan`:`Annual Supply and Demand Assessment`, names_to = "Report name", values_to = "Definition") %>%
   filter(!is.na(Definition))
 
 definition_group_supply <- filter(definitions_dat, `Water type` == "Water supply") %>%

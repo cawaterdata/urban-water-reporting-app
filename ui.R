@@ -19,12 +19,10 @@ shinyUI(
                           ),
                           checkboxGroupInput("data_compare_report_list",
                                              label = "Urban Water Reports",
-                                             choices = c("Annual Supply and Demand Assessment",
-                                                         "Electronic Annual Report",
+                                             choices = c("Electronic Annual Report",
                                                          "Monthly Urban Water Conservation Report",
                                                          "Urban Water Management Plan",
-                                                         "Water Loss Audit",
-                                                         "Water Use Objective"),
+                                                         "Water Loss Audit"),
                                              selected = c("Electronic Annual Report",
                                                           "Monthly Urban Water Conservation Report",
                                                           "Urban Water Management Plan",
@@ -77,9 +75,25 @@ shinyUI(
                                     multiple = T)),
                       mainPanel(textOutput("definitions_label"),
                                 tags$br(),
-                                DT::dataTableOutput("definitions_table"))),
+                                dataTableOutput("definitions_table"))),
              tabPanel("Resources",
                       mainPanel(
-                        htmlOutput("resources_links")))
+                        tabsetPanel(id = "tabselected_resources",
+                                    type = "tabs",
+                                    tabPanel("Annual Assessment",
+                                             htmlOutput("awsda_links")),
+                                    tabPanel("Electronic Annual Report",
+                                             htmlOutput("ear_links")),
+                                    tabPanel("Monthly Conservation Report",
+                                             htmlOutput("cr_links")),
+                                    tabPanel("Urban Water Management Plan",
+                                             htmlOutput("uwmp_links")),
+                                    tabPanel("Water Loss Audit",
+                                             htmlOutput("wlr_links")),
+                                    tabPanel("Water Use Objective",
+                                             htmlOutput("wuo_links"))
+)
+)
+)
 )
 )

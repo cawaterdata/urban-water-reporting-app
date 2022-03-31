@@ -31,8 +31,11 @@ definitions_filter <- reactive({
       pivot_wider(id_cols = `Water type`:Term, names_from = "Report name", values_from = "Definition") 
   })
   
-output$definitions_table <- renderDataTable(definitions_filter() %>%
-                                              select(-c(`Water type`, `Definition group`)))
+output$definitions_table <- renderDataTable(
+  DT::datatable(definitions_filter() %>%
+                  select(-c(`Water type`, `Definition group`)),
+                rownames = F)
+  )
 output$definitions_label <- renderText(paste(input$defintions_group_dropdown, "definitions"))
 
 observe({
@@ -121,12 +124,15 @@ output$metric_comparison_matrix <- renderFormattable({
 
 # resources tab -----------------------------------------------------------
 
-output$resources_links <- renderText(paste(
+output$awsda_links <- renderText(paste(
   tags$div(
   tags$h4("Annual Supply and Demand Assessment"),
   tags$ul(
     "DWR. 2021. Urban Water Management Plan: Draft Annual Water Supply and Demand Assessment 2021 (Appendix Q).",
-    "DWR. 2021. Urban Water Management Plan Guidebook 2020."),
+    "DWR. 2021. Urban Water Management Plan Guidebook 2020."))))
+
+output$ear_links <- renderText(paste(
+  tags$div(  
   tags$h4("Electronic Annual Report"),
   tags$ul(
     tags$li(tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/ear.html", "EAR Homepage")),
@@ -141,8 +147,10 @@ output$resources_links <- renderText(paste(
       tags$li(tags$a(href = "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=199519960SB1360#:~:text=116530",
            "Pre-2019 version of the law"))),
     tags$li(tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/documents/waterpartnerships/what_is_a_public_water_sys.pdf",
-           "What is a public water system?"))
-  ),
+           "What is a public water system?"))))))
+
+output$cr_links <- renderText(paste(
+  tags$div( 
   tags$h4("Monthly Urban Water Conservation Report"),
   tags$ul(
     tags$li(tags$a(href ="https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/water_conserva	tion_reports/",  "Overview Website")),
@@ -155,8 +163,10 @@ output$resources_links <- renderText(paste(
     tags$li(tags$a(href = "https://www.waterboards.ca.gov/water_issues/programs/conservation_portal/docs/emergency	_response_data_dictionary_accessible.pdf",
                    "Definitions and Data Dictionary for the Water Shortage Emergency Response Actions Dataset")),
     tags$li(tags$a(href = "https://data.ca.gov/dataset/drinking-water-public-water-system-operations-monthly-water-	production-and-conservation-information",
-                   "Data"))
-    ),
+                   "Data"))))))
+
+output$uwmp_links <- renderText(paste(
+  tags$div(
   tags$h4("Urban Water Management Plan"),
   tags$ul(
     tags$li(tags$a(href = "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Urban-Water-Management-Plans",
@@ -164,8 +174,9 @@ output$resources_links <- renderText(paste(
     tags$li(tags$a(href = "https://wuedata.water.ca.gov/secure/login_auth.asp?msg=inactivity&referer=/secure/Default.asp?",
                    "WUE Data Portal (Water Systems)")),
     tags$li(tags$a(href = "https://wuedata.water.ca.gov/",
-                   "WUE Data Portal (public)"))
-  ),
+                   "WUE Data Portal (public)"))))))
+output$wlr_links <- renderText(paste(
+  tags$div(
   tags$h4("Water Loss Audit"),
   tags$ul(
     tags$li(tags$a(href = "https://water.ca.gov/Programs/Water-Use-And-Efficiency/Urban-Water-Use-Efficiency/Validated-Water-Loss-Reporting",
@@ -179,8 +190,10 @@ output$resources_links <- renderText(paste(
     tags$li(tags$a(href = "https://wuedata.water.ca.gov/public/awwa_uploads/9152234733/AWWA-WAS-v5-09152014_CY2019_VALID.xls",
                    "Water Balance tab of AWWA xlsx")),
     tags$li(tags$a(href = "https://wuedata.water.ca.gov/public/awwa_uploads/9152234733/AWWA-WAS-v5-09152014_CY2019_VALID.xls",
-                   "Definitions tab of AWWA xlsx sheet"))
-  ),
+                   "Definitions tab of AWWA xlsx sheet"))))))
+
+output$wuo_links <- renderText(paste(
+  tags$div(
   tags$h4("Water Use Objective"),
   tags$ul(
     tags$li(tags$a(href = "https://water.ca.gov/Programs/Water-Use-And-Efficiency/2018-Water-Conservation-Legislation/Urban-Water-Use-Efficiency-Standards-and-Water-Use-Objective",
@@ -193,7 +206,6 @@ output$resources_links <- renderText(paste(
   )
   )
 ))
-
 
 }
 
