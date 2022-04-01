@@ -31,8 +31,7 @@ shinyUI(
                           selectInput("data_compare_type_dropdown",
                                       label = "Water data type",
                                       choices = c("Total Water Supply",
-                                                  "Total Water Demand",
-                                                  "Other"),
+                                                  "Total Water Demand"),
                                       selected = "Total Water Supply"
                           ),
                           switchInput("show_subcategories",

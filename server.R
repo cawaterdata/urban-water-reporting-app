@@ -68,7 +68,8 @@ output$metric_comparison_plot <- renderPlotly({
              yaxis = list(title = ""))
   } else {
     #TODO improve colors for subcategories 
-    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group)) %>% 
+    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group),
+                            !grepl("recycled", use_group)) %>% 
       filter(report_name %in% report_abbreviations[input$data_compare_report_list],
              parent_metric %in% input$data_compare_type_dropdown, 
              supplier_name == supplier_lookup[input$agency_dropdown])
@@ -79,9 +80,9 @@ output$metric_comparison_plot <- renderPlotly({
     
     ggplotly(ggplot(filter(filtered_data, !is.na(use_group)), aes(y = report_name, x = volume_af, fill = use_group)) +
       geom_col() +
-      labs(x = "Reported Annual AF Demand", y = "") +
+      labs(x = "Reported Annual Demand (AF)", y = "") +
       theme_minimal() +
-      theme(text = element_text(size=18),
+      theme(text = element_text(size=14),
             legend.title = element_blank(),
             legend.text = element_text(size = 10)) +
       scale_fill_manual(values = colors))
