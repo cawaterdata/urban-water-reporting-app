@@ -10,6 +10,7 @@ shinyUI(
              tabPanel("Data comparisons",
                       sidebarLayout(
                         sidebarPanel(
+                          conditionalPanel(condition="input.data_compare_tab==1",
                           selectInput("agency_dropdown",
                                       label = "Agency",
                                       choices = c("Agency 1",
@@ -39,13 +40,35 @@ shinyUI(
                           ), 
                           switchInput("delta_or_percent_delta_switch",
                                       label = "Percent Difference"
-                          )),
-                        mainPanel(plotlyOutput("metric_comparison_plot"), 
-                                  br(), 
-                                  hr(),
-                                  br(),
-                                  formattable::formattableOutput("metric_comparison_matrix"))
-                      )),
+                          ))),
+                        mainPanel(
+                          tabsetPanel(id = "data_compare_tab",
+                                      type = "tabs",
+                                      tabPanel("Explore data",
+                                               value = 1,
+                                               plotlyOutput("metric_comparison_plot"), 
+                                               br(), 
+                                               hr(),
+                                               br(),
+                                               formattable::formattableOutput("metric_comparison_matrix")),
+                                      tabPanel("Data Mapping",
+                                               value = 2,
+                                               "State reporting requirements include definitions for the water use and supply
+                                               groups that suppliers are required to report on. In many cases, the name of the 
+                                               water use or supply group varies across reporting requirements and the definition
+                                               may also vary.",
+                                               br(),
+                                               br(),
+                                               "The creation of an inclusive list of water use and supply groups, and mappings across
+                                               reporting requirements was informed by the synthesis of summary documents for 
+                                               state reporting requirements (also referred to as templates) and shown below.",
+                                               br(),
+                                               h2("Water use categories"),
+                                               dataTableOutput("use_type_lookup"),
+                                               br(),
+                                               h2("Water supply categories"),
+                                               dataTableOutput("supply_type_mapping"))
+                      )))),
              tabPanel("Definitions",
                       sidebarPanel(
                         checkboxGroupInput("definitions_report_list",

@@ -31,6 +31,38 @@ definition_group_use <- filter(definitions_dat, `Water type` == "Water use") %>%
   arrange(`Definition group`)
 definition_group_use <- definition_group_use$`Definition group`
 
+
+# mapping -----------------------------------------------------------------
+
+# use type lookup
+use_type_lookup <- read_rds("data/use_type_lookup.rds") %>%
+  mutate(category = "demand")
+use_type_mapping_table <- filter(use_type_lookup, !is.na(use_type)) %>%
+  pivot_wider(values_from = "use_type", names_from = "report_name") %>% 
+  select(-category) %>%
+  arrange(use_group) %>%
+  rename(`Use group` = use_group,
+         `Urban Water Management Plan` = UWMP,
+         `Monthly Urban Water Conservation Report` = CR,
+         `Electronic Annual Report` = EAR,
+         `Water Loss Audit` = WLR)
+
+# supply type lookup
+supply_type_lookup <- read_rds("data/supply_type_lookup.rds") %>%
+  mutate(category = "supply")
+supply_type_mapping_table <- filter(supply_type_lookup, !is.na(use_type), !grepl("total", use_group)) %>%
+  pivot_wider(values_from = "use_type", names_from = "report_name") %>% 
+  select(-category) %>%
+  arrange(use_group) %>%
+  rename(`Use group` = use_group,
+         `Urban Water Management Plan` = UWMP,
+         `Monthly Urban Water Conservation Report` = CR,
+         `Electronic Annual Report` = EAR,
+         `Water Loss Audit` = WLR)
+
+
+# comparisons -------------------------------------------------------------
+
 # TODO update data after we finish quantitative analysis 
 delta_metrics_data <- read_rds("data/urban_water_reporting_data.rds") 
 volume_metrics_data <- read_rds("data/supply_and_demand_volume_af.rds") 
