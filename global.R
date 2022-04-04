@@ -14,6 +14,17 @@ library(plotly)
 overview_dat <- read_csv("data/overview_table.csv")
 
 
+# Interview themes --------------------------------------------------------
+
+interview_dat <- read_csv("data/interview_themes.csv")
+
+time <- filter(interview_dat, `Parent themes` == "Time and resource constraints")
+quality <- filter(interview_dat, `Parent themes` == "Data quality")
+ethics <- filter(interview_dat, `Parent themes` == "Ethics and community")
+definitions <- filter(interview_dat, `Parent themes` == "Definitions")
+utility <- filter(interview_dat, `Parent themes` == "Utility of state reporting requirements")
+recommendations <- filter(interview_dat, `Parent themes` == "Recommendations")
+
 # Definitions -------------------------------------------------------------
 
 definitions_dat_raw <- read_csv("data/data_dictionary.csv")

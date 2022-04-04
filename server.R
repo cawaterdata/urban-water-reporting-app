@@ -21,6 +21,20 @@ server <- function(input, output, session) {
   # need to make table headers readable; probably don't need filter; could add 
   # some background/explanation text
 
+
+# interview tab -----------------------------------------------------------
+  output$time_table <- renderDataTable(time %>%
+                                         select(-`Parent themes`), rownames = F)
+  output$quality_table <- renderDataTable(quality %>%
+                                         select(-`Parent themes`), rownames = F)
+  output$ethics_table <- renderDataTable(ethics %>%
+                                         select(-`Parent themes`), rownames = F)
+  output$definitions_interview_table <- renderDataTable(definitions %>%
+                                         select(-`Parent themes`), rownames = F)
+  output$utility_table <- renderDataTable(utility %>%
+                                         select(-`Parent themes`), rownames = F)
+  output$recommendations_table <- renderDataTable(recommendations %>%
+                                         select(-`Parent themes`), rownames = F)
 # definitions tab ---------------------------------------------------------
 
 definitions_filter <- reactive({
