@@ -72,7 +72,7 @@ observe({
 # mapping -----------------------------------------------------------------
 
 output$use_type_lookup <- renderDataTable({
-  DT::datatable(use_type_mapping_table, rownames = F) %>%
+  datatable(use_type_mapping_table, rownames = F) %>%
     formatStyle('Urban Water Management Plan', background = styleEqual(NA, 'lightgray')) %>%
     formatStyle('Monthly Urban Water Conservation Report', background = styleEqual(NA, 'lightgray')) %>%
     formatStyle('Electronic Annual Report', background = styleEqual(NA, 'lightgray')) %>%
@@ -80,7 +80,7 @@ output$use_type_lookup <- renderDataTable({
 })
 
 output$supply_type_mapping <- renderDataTable({
-  DT::datatable(supply_type_mapping_table, rownames = F) %>%
+  datatable(supply_type_mapping_table, rownames = F) %>%
     formatStyle('Urban Water Management Plan', background = styleEqual(NA, 'lightgray')) %>%
     formatStyle('Monthly Urban Water Conservation Report', background = styleEqual(NA, 'lightgray')) %>%
     formatStyle('Electronic Annual Report', background = styleEqual(NA, 'lightgray')) %>%

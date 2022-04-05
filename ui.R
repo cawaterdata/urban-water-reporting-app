@@ -5,7 +5,7 @@ shinyUI(
                       textOutput("project_summary_text"),
                       tags$br(),
                       h3("Summary of reporting requirements"),
-                      DT::dataTableOutput("overview_table")
+                      dataTableOutput("overview_table")
                       ),
              tabPanel("Data comparisons",
                       sidebarLayout(
