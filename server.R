@@ -155,6 +155,9 @@ output$metric_comparison_matrix <- renderFormattable({
               list(area(col = 2:ncol(dat)) ~ color_tile("transparent", "pink")))
 })
 
+output$guided_examples <- renderUI({
+  includeHTML("guided_examples.html")
+})
 # resources tab -----------------------------------------------------------
 
 output$awsda_links <- renderText(paste(

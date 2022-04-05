@@ -74,7 +74,10 @@ shinyUI(
                                                dataTableOutput("use_type_lookup"),
                                                br(),
                                                h2("Water supply categories"),
-                                               dataTableOutput("supply_type_mapping"))
+                                               dataTableOutput("supply_type_mapping")),
+                                      tabPanel("Guided examples",
+                                               value = 3,
+                                               uiOutput("guided_examples"))
                       )))),
              tabPanel("Interview themes",
                       tabsetPanel(id = "interview_tab",
