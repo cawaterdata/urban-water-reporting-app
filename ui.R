@@ -53,6 +53,12 @@ shinyUI(
                                       type = "tabs",
                                       tabPanel("Explore data",
                                                value = 1,
+                                               h5("There are many reasons why values may differ across reports,
+                                               including definitional inconsistencies across reports and 
+                                               differences in what data are reported. One of the major reasons
+                                               why values may differ is the reporting timeline - some are reported
+                                               monthly, annually, or on a fiscal year"),
+                                               br(),
                                                plotlyOutput("metric_comparison_plot"), 
                                                br(), 
                                                hr(),
