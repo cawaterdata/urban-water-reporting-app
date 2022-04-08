@@ -90,6 +90,31 @@ output$supply_type_mapping <- renderDataTable({
 })
 #  quantitative analysis tab ---------------------------------------------------
 
+output$data_source <- renderText(paste(
+  tags$div(  
+    tags$h4("Electronic Annual Report"),
+    tags$ul(
+      tags$li("2020 EAR data were downloaded from the", tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/eardata.html", "EAR Homepage.")),
+      tags$li("Water supply data was pulled by filtering QuestionName to include WP."),
+      tags$li("Water demand data was pulled by filtering QuestionName to include WD.")),
+    tags$h4("Urban Water Management Plan"),
+    tags$ul(
+      tags$li("2020 UWMP data were downloaded", tags$a(href = "https://wuedata.water.ca.gov/uwmp_export_2020.asp", "here.")),
+      tags$li("Table 6-8 Retail: Water Supplies - Actual was used for water supply data."),
+      tags$li("Table 4-1 Retail: Demands for Potable and Non-Potable Water - Actual was used for water demand data.")
+    ),
+    tags$h4("Monthly Urban Water Conservation Report"),
+    tags$ul(
+      tags$li("CR data were downloaded", tags$a(href = "https://data.ca.gov/dataset/drinking-water-public-water-system-operations-monthly-water-production-and-conservation-information/resource/0c231d4c-1ea7-43c5-a041-a3a6b02bac5e", "here."))
+    ),
+    tags$h4("Water Loss Audit"),
+    tags$ul(
+      tags$li("2020 WLR data were downloaded", tags$a(href = "https://wuedata.water.ca.gov/awwa_export", "here.")),
+      tags$li("Water supply data pulled were: WS_OWN_SOURCES_VOL_AF, WS_IMPORTED_VOL_AF, WS_EXPORTED_VOL_AF, WS_WATER_SUPPLIED_VOL_AF"),
+      tags$li("Water demand data pulled were: AC_BILL_METER_VOL_AF, AC_BILL_UNMETER_VOL_AF, AC_UNBILL_METER_VOL_AF, AC_UNBILL_UNMETER_VOL_AF, AC_AUTH_CONSUMPTION_VOL_AF")
+    ))))
+
+
 output$metric_comparison_plot <- renderPlotly({
   if (input$show_subcategories == FALSE) {
   filtered_data <- volume_metrics_data %>% 

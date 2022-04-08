@@ -60,6 +60,9 @@ shinyUI(
                                                formattable::formattableOutput("metric_comparison_matrix")),
                                       tabPanel("Data Mapping",
                                                value = 2,
+                                               h2("Data Source"),
+                                               htmlOutput("data_source"),
+                                               br(),
                                                "State reporting requirements include definitions for the water use and supply
                                                groups that suppliers are required to report on. In many cases, the name of the 
                                                water use or supply group varies across reporting requirements and the definition
