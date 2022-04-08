@@ -128,11 +128,13 @@ output$metric_comparison_plot <- renderPlotly({
              yaxis = list(title = ""))
   } else {
     #TODO improve colors for subcategories 
-    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group)) %>% 
+    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group), !is.na(use_group)) %>% 
       filter(report_name %in% report_abbreviations[input$data_compare_report_list],
              parent_metric %in% input$data_compare_type_dropdown, 
              supplier_name == supplier_lookup[input$agency_dropdown]) %>%
-      mutate(volume_af = ifelse(use_group == "sold", volume_af*-1, volume_af))
+      mutate(volume_af = ifelse(use_group == "sold", volume_af*-1, volume_af)) %>%
+      group_by(report_name, supplier_name, year, use_type, use_group) %>%
+      summarize(volume_af = sum(volume_af, na.rm = T))
     # plot_ly(filtered_data, y = ~report_name, x = ~volume_af, fill = ~use_group,
     #         type = "bar", marker = list(color = colors)) %>% #TODO fix color 
     #   layout(xaxis = list(title = input$data_compare_type_dropdown),
