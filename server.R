@@ -102,8 +102,7 @@ output$metric_comparison_plot <- renderPlotly({
              yaxis = list(title = ""))
   } else {
     #TODO improve colors for subcategories 
-    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group),
-                            !grepl("recycled", use_group)) %>% 
+    filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group)) %>% 
       filter(report_name %in% report_abbreviations[input$data_compare_report_list],
              parent_metric %in% input$data_compare_type_dropdown, 
              supplier_name == supplier_lookup[input$agency_dropdown])
