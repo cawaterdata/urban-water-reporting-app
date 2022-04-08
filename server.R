@@ -95,7 +95,8 @@ output$data_source <- renderText(paste(
     tags$h4("Electronic Annual Report"),
     tags$ul(
       tags$li("2020 EAR data were downloaded from the", tags$a(href = "https://www.waterboards.ca.gov/drinking_water/certlic/drinkingwater/eardata.html", "EAR Homepage.")),
-      tags$li("Water supply data was pulled by filtering QuestionName to include WP."),
+      tags$li("Water supply data was pulled by filtering QuestionName to include WP. Total supply was calculated as the sum of total potable water, nonpotable water, and recycled water
+              minus water sold to another PWS."),
       tags$li("Water demand data was pulled by filtering QuestionName to include WD.")),
     tags$h4("Urban Water Management Plan"),
     tags$ul(
@@ -110,7 +111,7 @@ output$data_source <- renderText(paste(
     tags$h4("Water Loss Audit"),
     tags$ul(
       tags$li("2020 WLR data were downloaded", tags$a(href = "https://wuedata.water.ca.gov/awwa_export", "here.")),
-      tags$li("Water supply data pulled were: WS_OWN_SOURCES_VOL_AF, WS_IMPORTED_VOL_AF, WS_EXPORTED_VOL_AF, WS_WATER_SUPPLIED_VOL_AF"),
+      tags$li("Water supply data pulled were: WS_OWN_SOURCES_VOL_AF, WS_IMPORTED_VOL_AF, WS_EXPORTED_VOL_AF, WS_WATER_SUPPLIED_VOL_AF. WS_WATER_SUPPLIED_VOL_AF is used as the total supply."),
       tags$li("Water demand data pulled were: AC_BILL_METER_VOL_AF, AC_BILL_UNMETER_VOL_AF, AC_UNBILL_METER_VOL_AF, AC_UNBILL_UNMETER_VOL_AF, AC_AUTH_CONSUMPTION_VOL_AF")
     ))))
 
@@ -130,7 +131,8 @@ output$metric_comparison_plot <- renderPlotly({
     filtered_data <- filter(volume_metrics_data_with_subcategories, !grepl("total", use_group)) %>% 
       filter(report_name %in% report_abbreviations[input$data_compare_report_list],
              parent_metric %in% input$data_compare_type_dropdown, 
-             supplier_name == supplier_lookup[input$agency_dropdown])
+             supplier_name == supplier_lookup[input$agency_dropdown]) %>%
+      mutate(volume_af = ifelse(use_group == "sold", volume_af*-1, volume_af))
     # plot_ly(filtered_data, y = ~report_name, x = ~volume_af, fill = ~use_group,
     #         type = "bar", marker = list(color = colors)) %>% #TODO fix color 
     #   layout(xaxis = list(title = input$data_compare_type_dropdown),
