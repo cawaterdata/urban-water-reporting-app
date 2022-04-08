@@ -33,8 +33,10 @@ server <- function(input, output, session) {
                                          select(-`Parent themes`), rownames = F)
   output$utility_table <- renderDataTable(utility %>%
                                          select(-`Parent themes`), rownames = F)
-  output$recommendations_table <- renderDataTable(recommendations %>%
-                                         select(-`Parent themes`), rownames = F)
+  output$recommendations_table <- renderDataTable({
+    datatable(recommendations %>%
+                select(-`Parent themes`), rownames = F, escape = F)
+  })
 # definitions tab ---------------------------------------------------------
 
 definitions_filter <- reactive({
