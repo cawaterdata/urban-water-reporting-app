@@ -119,8 +119,8 @@ shinyUI(
                       Water Conservation Report was mentioned as a challenge, particularly 
                       if the agency was on a bimonthly meter read cycle.",
                       dataTableOutput("quality_table")),
-                      tabPanel("Data ethics and community",
-                      h3("Data ethics and community"),
+                      tabPanel("Data stewardship and community",
+                      h3("Data stewardship and community"),
                       "Related to the theme of data quality, in many interviews 
                       it was apparent that individuals wanted to provide data of 
                       the highest quality to support better policy. Both small and 
